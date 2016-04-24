@@ -9,6 +9,7 @@ Pokédex de la primera generación de pokémones creado con Ionic.
 Datos (JSON) e imágenes extraidos de https://github.com/JuanDelgadillo/angular2-pokedex
 
 Versión de Ionic (1.7.14)
+
 Android Target SDK Versión 22
 
 ###Para Iniciar
@@ -18,12 +19,15 @@ Android Target SDK Versión 22
  o
 
  `ionic platform add android`
+ 
  `ionic run android` o `ionic emulate android`
+ 
  `ionic build android` (Y copia e instala la .app en tu smartphone)
 
  o
 
  `ionic platform add ios`
+ 
  `ionic run ios` o `ionic emulate ios`
 
 ###Consideración
