@@ -1,60 +1,36 @@
-<<<<<<< HEAD
 ## Pokédex con Ionic
-=======
-#Pokédex con Ionic
 
-###Descripción 
->>>>>>> aaede69ff693d254c087ef1cd4c3ea748d510a6d
+###Descripción
 
-Descripción :
+Pokédex de la primera generación de pokémones creado con Ionic.
 
-<<<<<<< HEAD
- Pokédex de la primera generación de pokémones creado con Ionic.
-
-Información :
-
- Datos (JSON) e imágenes extraidos de https://github.com/JuanDelgadillo/angular2-pokedex
-
-Para Iniciar :
-
- ionic serve
-
- or
-
- ionic platform add android
- ionic run android or ionic emulate android
-
- or
-
- ionic platform add ios
- ionic run ios or ionic emulate ios
-
-
-Consideración :
-
- Es necesario para tener instalado las dependencias necearías para el correcto funcionamiento de Ionic.
- Para mayor información visite http://ionicframework.com/docs/guide/installation.html
-=======
-###Información 
+###Información
 
 Datos (JSON) e imágenes extraidos de https://github.com/JuanDelgadillo/angular2-pokedex
 
-###Para Iniciar 
+Versión de Ionic (1.7.14)
 
-`ionic serve`
+Android Target SDK Versión 22
+
+###Para Iniciar
+
+ `ionic serve`
 
  o
 
-`ionic platform add android`
-`ionic run android` o `ionic emulate android`
+ `ionic platform add android`
+ 
+ `ionic run android` o `ionic emulate android`
+ 
+ `ionic build android` (Y copia e instala la .app en tu smartphone)
 
  o
 
-`ionic platform add ios`
-`ionic run ios` o `ionic emulate ios`
+ `ionic platform add ios`
+ 
+ `ionic run ios` o `ionic emulate ios`
 
 ###Consideración
 
-Es necesario para tener instalado las dependencias necearías para el correcto funcionamiento de Ionic.
-Para mayor información visite http://ionicframework.com/docs/guide/installation.html
->>>>>>> aaede69ff693d254c087ef1cd4c3ea748d510a6d
+ Es necesario para tener instalado las dependencias necearías para el correcto funcionamiento de Ionic.
+ Para mayor información visite http://ionicframework.com/docs/guide/installation.html
