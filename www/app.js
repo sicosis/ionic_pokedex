@@ -1,7 +1,9 @@
 var PokedexApp = angular.module('PokedexApp', ["ionic"]);
 
 PokedexApp.service('PokedexSvc', ['$http', '$rootScope', PokedexSvc]);
+
 PokedexApp.controller('PokedexCtrl', ['$scope', '$ionicLoading', 'PokedexSvc', '$filter', PokedexCtrl]);
+
 PokedexApp.filter('imageify', function () {
   return function(input) {
     return input.replace('♀', 'f').replace('♂', 'm').replace(/\W+/g, "").toLowerCase();
@@ -12,11 +14,13 @@ PokedexApp.filter('imageify', function () {
 function PokedexCtrl ($scope, $ionicLoading, PokedexSvc, $filter)
 {
   $scope.pokemons = [];
+  $scope.numberOfPokemonsToDisplay = 20;
 
   var urlToImgs = 'assets/img/pokemons/';
 
-  $ionicLoading.show({template : 'Loading Pokemons'});
+  PokedexSvc.loadPokemons();
 
+  $ionicLoading.show({template : 'Loading Pokemons'});
   $scope.$on('PokedexApp.pokemons', function(_, result)
   {
     result.forEach(function(p)
@@ -29,15 +33,16 @@ function PokedexCtrl ($scope, $ionicLoading, PokedexSvc, $filter)
         type : p.type
       });
     });
-
-    //$scope.$broadcast('scroll.infiniteScrollComplete');
-    $scope.$broadcast('scroll.refreshComplete');
     $ionicLoading.hide();
+    $scope.$broadcast('scroll.refreshComplete');
   });
   
   $scope.loadMore = function ()
   {
-    PokedexSvc.loadPokemons();
+    if ($scope.pokemons.length > $scope.numberOfPokemonsToDisplay) {
+      $scope.numberOfPokemonsToDisplay += 20; // load 5 more pokemons
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+    }
   };
 
   $scope.reloadPokemons = function ()
