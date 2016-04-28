@@ -1,0 +1,26 @@
+<ion-view title="Detail Pokemon">
+  <ion-content>
+    <ion-list class="list card">
+      <ion-item class="item item-avatar">
+        <img ng-src="{{p.img}}">
+        <h2>{{p.name}}</h2>
+        <p>{{p.species}}</p>
+      </ion-item>
+      <ion-item class="item item-body">
+        <ion-list>
+          <ion-item>
+            <h2 class="title">Type</h2>
+            <p ng-repeat="t in p.type"><span class="type type-{{t | lowercase}}">{{t}}</span></p>
+          </ion-item>
+          <ion-item>
+            <ul>
+              <li>Height : {{p.height}}</li>
+              <li>Weight : {{p.weight}}</li>
+              <li>Abilities : <span ng-repeat="ability in p.abilities">'{{ability}}' </span></li>
+            </ul>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
