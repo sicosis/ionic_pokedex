@@ -1,25 +1,39 @@
 <ion-view title="Detail Pokemon">
   <ion-content>
-    <ion-list class="list card">
-      <ion-item class="item item-avatar">
-        <img ng-src="{{p.img}}">
-        <h2>{{p.name}}</h2>
+    <ion-list class="list">
+      <ion-item class="item item-thumbnail-right">
+        <img ng-src="{{p.img}}" class="item-image">
+        <h2 class="bold-font">{{p.name}}</h2>
         <p>{{p.species}}</p>
+        <p class="padding-top">
+          <img ng-repeat="t in p.type" class="type"  ng-src='assets/img/types/type-{{t | lowercase}}.png' alt="{{t | lowercase}}">
+        </p>
       </ion-item>
-      <ion-item class="item item-body">
-        <ion-list>
-          <ion-item>
-            <h2 class="title">Type</h2>
-            <p ng-repeat="t in p.type"><span class="type type-{{t | lowercase}}">{{t}}</span></p>
-          </ion-item>
-          <ion-item>
-            <ul>
-              <li>Height : {{p.height}}</li>
-              <li>Weight : {{p.weight}}</li>
-              <li>Abilities : <span ng-repeat="ability in p.abilities">'{{ability}}' </span></li>
-            </ul>
-          </ion-item>
-        </ion-list>
+      <ion-item class="item">
+        <h2 class="bold-font padding-bottom">Abilities</h2>
+        <p>
+          <ul>
+            <li ng-repeat="abi in p.abilities" class="">
+              {{abi}}
+            </li>
+          </ul>
+        </p>
+      </ion-item>
+      <ion-item class="item">
+        <h2 class="bold-font padding-bottom">Stats</h2>
+        <p>
+          <ul>
+            <li ng-repeat="(stat, value) in p.stats" class="">
+              <span class="stat">{{stat}}</span>  <span class="item-note">{{value}}<span>
+            </li>
+          </ul>
+        </p>
+      </ion-item>
+      <ion-item class="item list-img">
+        <h2 class="bold-font padding-bottom">Evolution</h2>
+        <p>
+          <img ng-repeat="evo in p.evolution" class="evolution"  ng-src='assets/img/pokemons/{{evo | lowercase}}.jpg'>
+        </p>
       </ion-item>
     </ion-list>
   </ion-content>

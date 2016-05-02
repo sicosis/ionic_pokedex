@@ -11,22 +11,18 @@
     </button>
   </ion-header-bar>
   <ion-content>
-    <!--<ion-header-bar class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Search" ng-model="searchPoke">
-      </label>
-    </ion-header-bar>-->
-    <ion-list class="list card">
-      <ion-item ng-repeat="p in pokemons | filter:searchPoke | limitTo:numberOfPokemonsToDisplay" class="item  item-thumbnail-left item-icon-right" href="#/tab/pokemons/{{p.id}}">
+    <ion-list class="list">
+      <ion-item ng-repeat="p in pokemons | filter:searchPoke | limitTo:numberOfPokemonsToDisplay" class="item item-avatar-left" href="#/tab/pokemons/{{p.id}}">
         <img ng-src="{{p.img}}">
-        <h2> <span class="id">#{{p.id}}</span> - {{ p.name }} </h2>
-        <p> {{p.species}} </p>
-        <span ng-repeat="t in p.type"> <span class="type type-{{t | lowercase}}">{{t}}</span> </span>
-        <i class="icon ion-chevron-right icon-accessory item-icon-right"></i>
-        <ion-option-button class="button-energized">Info</ion-option-button>
+        <h2> <span class="bold-font">#{{p.id}}</span> - {{ p.name }} </h2>
+        <!--<p> {{p.species}} </p>-->
+        <!--<span ng-repeat="t in p.type"> <span class="type type-{{t | lowercase}}">{{t}}</span> </span>-->
+        <!--<i class="icon ion-chevron-right icon-accessory item-icon-right"></i>-->
+        <!--<ion-option-button class="button-energized">Info</ion-option-button>-->
       </ion-item>
       <ion-infinite-scroll on-infinite="loadMore()" ng-if="pokemons.length > numberOfPokemonsToDisplay"></ion-infinite-scroll>
     </ion-list>
   </ion-content>
 </ion-view>
+
+
